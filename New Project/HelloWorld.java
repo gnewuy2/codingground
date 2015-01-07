@@ -13,8 +13,11 @@ public class HelloWorld{
             System.out.println(Integer.toString(value1));
             
         int result;
+        boolean resultb;
         result = (value1-value2>0? value1:value2);
+        resultb = value1-value2>0;
         System.out.println(result); // can print string and number both
+        System.out.println(resultb);
      }
 }
 
