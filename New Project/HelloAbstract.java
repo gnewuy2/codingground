@@ -27,6 +27,7 @@ abstract class AnAbstractAirplane extends HelloWorld{
     void setNoOfPropellers(int newNoOfPropellers){
         this.noOfPropellers = newNoOfPropellers;
     }
+    int seatingCapacity = 200;
 }
 
 class AnAirplane extends AnAbstractAirplane{
