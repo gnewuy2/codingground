@@ -43,3 +43,30 @@ class AnAirplane extends AnAbstractAirplane{
         return typeOf;
     }
 } 
+
+//If public interface then it needs to be declared in a file named 
+//IntAirPlane.java
+interface IntAirplane{
+    void setSeatingCapacity(int newCapacity);
+    void setBrand(String newBrand);
+    void setTypeOf(String newTypeOf);
+
+}
+
+//If public class ten it needs to be declared in a
+//separate file named AnIntAirplane.java
+class AnIntAirplane implements IntAirplane{
+    int seatingCapacity;
+    String brand;
+    String typeOf;
+    public void setSeatingCapacity(int newCapacity){
+        this.seatingCapacity = newCapacity;
+    }
+    // this public void was necessary, or it cannot implement the itnerface
+    public void setBrand(String newBrand){
+        this.brand = newBrand;
+    }
+    public void setTypeOf(String newTypeOf){
+        this.typeOf = newTypeOf;
+    }
+}
