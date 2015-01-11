@@ -1,5 +1,5 @@
-abstract class HelloWorld{
-    int seatingCapacity;
+abstract class HelloWorld1{
+    int seatingCapacity, noOfPropellers;
     String brand, typeOf;
     abstract void setSeatingCapacity(int newCapacity);
     abstract void setBrand(String newBrand);
@@ -11,10 +11,7 @@ abstract class HelloWorld{
     abstract int getNoOfPropellers();
 }
 
-//"extends" = inherits fully or partially
-//"implements" = concretizes fully
-
-abstract class AnAbstractAirplane extends HelloWorld{
+abstract class AnAbstractAirplane extends HelloWorld1{
     void setSeatingCapacity(int newCapacity){
         this.seatingCapacity = newCapacity; 
     }
@@ -27,7 +24,7 @@ abstract class AnAbstractAirplane extends HelloWorld{
     void setNoOfPropellers(int newNoOfPropellers){
         this.noOfPropellers = newNoOfPropellers;
     }
-    int seatingCapacity = 200;
+    int seatingCapacity = 150;
 }
 
 class AnAirplane extends AnAbstractAirplane{
@@ -43,31 +40,13 @@ class AnAirplane extends AnAbstractAirplane{
     String getTypeOf(){
         return typeOf;
     }
+    //int seatingCapacity =200; //If defined then overrides superclass's value
 } 
 
-//If public interface then it needs to be declared in a file named 
-//IntAirPlane.java
-interface IntAirplane{
-    void setSeatingCapacity(int newCapacity);
-    void setBrand(String newBrand);
-    void setTypeOf(String newTypeOf);
-
-}
-
-//If public class ten it needs to be declared in a
-//separate file named AnIntAirplane.java
-class AnIntAirplane implements IntAirplane{
-    int seatingCapacity;
-    String brand;
-    String typeOf;
-    public void setSeatingCapacity(int newCapacity){
-        this.seatingCapacity = newCapacity;
-    }
-    // this public void was necessary, or it cannot implement the itnerface
-    public void setBrand(String newBrand){
-        this.brand = newBrand;
-    }
-    public void setTypeOf(String newTypeOf){
-        this.typeOf = newTypeOf;
-    }
+class HelloWorld{
+ public static void main(String []args){
+        AnAirplane a1 = new AnAirplane();
+        System.out.println(a1.getSeatingCapacity());
+        //abstract classes cannot be instantiated.
+     }
 }
